@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<title>Blog do Caião</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Game Warrior Template">
+	<meta name="keywords" content="warrior, game, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->   
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
+	<![endif]-->
+
+	<style>
+		.clickable:hover{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="container">
+			<!-- logo -->
+			<a class="site-logo" href="index.html">
+				<img src="img/logo.png" alt="">
+			</a>
+			<div class="user-panel">
+				<a data-toggle="modal"data-target="#modalLogin" class="clickable">Entre</a>  /  <a data-toggle="modal"data-target="#modalRegistro" class="clickable">Registre-se</a>
+			</div>
+			<!-- responsive -->
+			<div class="nav-switch">
+				<i class="fa fa-bars"></i>
+			</div>
+			<!-- site menu -->
+			<nav class="main-menu">
+				<ul>
+					<li><a href="desenvolvedoras.html">Desenvolvedoras</a></li>
+					<li><a href="review.html">Top Jogos</a></li>
+					<li><a href="plataforms.html">Plataformas</a></li>
+					<li><a href="CrudLogin.html">Crud Usuarios</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item set-bg" data-setbg="https://media.rawg.io/media/games/713/713269608dc8f2f40f5a670a14b2de94.jpg">
+				<div class="hs-text">
+					<div class="container">
+						<h2>The Best <span>Games</span> Out There</h2>
+						<p></p>
+						<a href="#" class="site-btn">Read More</a>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg">
+				<div class="hs-text">
+					<div class="container">
+						<h2>The Best <span>Games</span> Out There</h2>
+						<p></p>
+						<a onclick="ListaTopJogos()" class="site-btn">Read More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+	
+
+
+	<!-- Feature section -->
+	<section class="feature-section spad">
+		<div id= "jogosHome"class="container">
+			<div class="row">
+				
+					<!-- Nesse lugar entra o Home Jogos-->
+			</div>
+		</div>
+	</section>
+	<!-- Feature section end -->
+
+
+	<!-- Recent game section  -->
+	<section class="recent-game-section spad set-bg" data-setbg="img/recent-game-bg.png">
+		<div id= "topJogosHome" class="container">
+			<div class="section-title">
+				<h2>Jogos Favoritos</h2>
+			</div>
+			<div class="row">
+				
+			</div>
+		</div>
+	</section>
+	<!-- Recent game section end -->
+
+
+	<!-- Grafico section -->
+	<section class="tournaments-section spad">
+		<div class="container">
+			<div class="section-title">
+				<h2 style="color:#eef2f6;">Quantidade de jogos por gênero</h2>
+				<!-- <a  onclick="CriaGrafico(1)" style="margin-top: 20px;" class="site-btn">Próximo</a> -->
+			</div>
+			<div class="col_lg_10" id="Grafico">
+				<canvas class="line-chart">     
+				</canvas>
+			</div>
+		</div>
+	</section>
+	<!-- Grafico section bg -->
+
+
+	<!-- Review section -->
+	<section class="review-section spad set-bg" data-setbg="img/review-bg.png">
+		<div class="container">
+			<div id="fraseGraf" class="section-title">
+				<h2 style="color: rgb(126, 113, 107);">Quantidade de jogos por plataforma</h2>
+				
+			</div>
+			<div class="col_lg_10" id="Grafico">
+				<canvas class="line-chart">     
+				</canvas>
+			</div>
+		</div>
+	</section>
+	<!-- Review section end -->
+
+
+	<!-- Footer top section -->
+	<section class="footer-top-section">
+		<div class="container">
+			<div class="footer-top-bg">
+				<img src="img/footer-top-bg.png" alt="">
+			</div>
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="footer-logo text-white">
+						<img src="img/footer-logo.png" alt="">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-widget mb-5 mb-md-0">
+						<h4 class="fw-title">Latest Posts</h4>
+						<div class="latest-blog">
+							<div class="lb-item">
+								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/1.jpg"></div>
+								<div class="lb-content">
+									<div class="lb-date">June 21, 2018</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
+									<a href="#" class="lb-author">By Admin</a>
+								</div>
+							</div>
+							<div class="lb-item">
+								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/2.jpg"></div>
+								<div class="lb-content">
+									<div class="lb-date">June 21, 2018</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
+									<a href="#" class="lb-author">By Admin</a>
+								</div>
+							</div>
+							<div class="lb-item">
+								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/3.jpg"></div>
+								<div class="lb-content">
+									<div class="lb-date">June 21, 2018</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
+									<a href="#" class="lb-author">By Admin</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-widget">
+						<h4 class="fw-title">Top Comments</h4>
+						<div class="top-comment">
+							<div class="tc-item">
+								<div class="tc-thumb set-bg" data-setbg="img/authors/1.jpg"></div>
+								<div class="tc-content">
+									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
+									<div class="tc-date">June 21, 2018</div>
+								</div>
+							</div>
+							<div class="tc-item">
+								<div class="tc-thumb set-bg" data-setbg="img/authors/2.jpg"></div>
+								<div class="tc-content">
+									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
+									<div class="tc-date">June 21, 2018</div>
+								</div>
+							</div>
+							<div class="tc-item">
+								<div class="tc-thumb set-bg" data-setbg="img/authors/3.jpg"></div>
+								<div class="tc-content">
+									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
+									<div class="tc-date">June 21, 2018</div>
+								</div>
+							</div>
+							<div class="tc-item">
+								<div class="tc-thumb set-bg" data-setbg="img/authors/4.jpg"></div>
+								<div class="tc-content">
+									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
+									<div class="tc-date">June 21, 2018</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Footer top section end -->
+
+	
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<div class="container">
+			<ul class="footer-menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="review.html">Games</a></li>
+				<li><a href="categories.html">Blog</a></li>
+				<li><a href="community.html">Forums</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+			
+		</div>
+	</footer>
+
+	
+	<!-- Footer section end -->
+	
+	<div class="modal fade" id="modalLogin">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<header class="modal-header">
+					<h4 class="modal-title" id="modalCreate">Criar conta</h4>
+					<button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close"
+						onclick=" clearFields('formularioCreate')">X</button>
+				</header>
+				<div class="modal-body">
+					<form id="formularioCreate" data-index="new">
+						<label for="NomeUsuario">Nome de Usuario:</label> <br>
+						<input type="text" id="nomeLO" name="NomeUsuario"> <br>
+						<label for="Senha" style="margin-top: 20px;">Senha:</label><br>
+						<input type="password" name="Senha" id="senhaLO">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-warning" data-dismiss="modal" onclick="saveUsuario()">Login</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modalRegistro">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<header class="modal-header">
+					<h4 class="modal-title" id="modalCreate">Criar conta</h4>
+					<button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close"
+						onclick=" clearFields('formularioCreate')">X</button>
+				</header>
+				<div class="modal-body">
+					<form id="formularioCreate" data-index="new">
+						<label for="NomeUsuario">Nome de Usuario:</label> <br>
+						<input type="text" id="nomeRE" name="NomeUsuario"> <br>
+						<label for="Email" style="margin-top: 20px;">Email:</label> <br>
+						<input type="email" id="emailRE" name="Email"> <br>
+						<label for="Senha" style="margin-top: 20px;">Senha:</label><br>
+						<input type="password" name="Senha" id="senhaRE">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-warning" data-dismiss="modal" onclick="saveUsuario()">Criar conta</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--====== Javascripts & Jquery ======-->
+	
+	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.marquee.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="/JS/requests.js"></script>
+	<script src="/JS/Paginas/Home.js"></script>
+	<script src="/JS/login.js"></script>
+	
+	
+   
+	
+    </body>
+</html>
