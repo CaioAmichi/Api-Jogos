@@ -41,26 +41,23 @@
 	</div>
 
 	<!-- Header section -->
-	<header class="header-section">
-		<div class="container">
+	<header id="cabecalho" class="header-section">
+		<div id ="infos"class="container">
 			<!-- logo -->
 			<a class="site-logo" href="index.html">
 				<img src="img/logo.png" alt="">
 			</a>
-			<div class="user-panel">
-				<a data-toggle="modal"data-target="#modalLogin" class="clickable">Entre</a>  /  <a data-toggle="modal"data-target="#modalRegistro" class="clickable">Registre-se</a>
+			<div id="login" class="user-panel">
+			
 			</div>
 			<!-- responsive -->
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>
 			</div>
 			<!-- site menu -->
-			<nav class="main-menu">
+			<nav id = "paginas" class="main-menu">
 				<ul>
-					<li><a href="desenvolvedoras.html">Desenvolvedoras</a></li>
-					<li><a href="review.html">Top Jogos</a></li>
-					<li><a href="plataforms.html">Plataformas</a></li>
-					<li><a href="CrudLogin.html">Crud Usuarios</a></li>
+					
 				</ul>
 			</nav>
 		</div>
@@ -243,7 +240,7 @@
 	<!-- Footer section -->
 	<footer class="footer-section">
 		<div class="container">
-			<ul class="footer-menu">
+			<ul  class="footer-menu">
 				<li><a href="index.html">Home</a></li>
 				<li><a href="review.html">Games</a></li>
 				<li><a href="categories.html">Blog</a></li>
@@ -268,17 +265,19 @@
 				<div class="modal-body">
 					<form id="formularioCreate" data-index="new">
 						<label for="NomeUsuario">Nome de Usuario:</label> <br>
-						<input type="text" id="nomeLO" name="NomeUsuario"> <br>
+						<input type="text" id="usuarioL" name="NomeUsuario"> <br>
 						<label for="Senha" style="margin-top: 20px;">Senha:</label><br>
-						<input type="password" name="Senha" id="senhaLO">
+						<input type="password" name="Senha" id="senhaL">
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-warning" data-dismiss="modal" onclick="saveUsuario()">Login</button>
+					<button class="btn btn-warning" data-dismiss="modal" onclick="Login()">Login</button>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	
 
 	<div class="modal fade" id="modalRegistro">
 		<div class="modal-dialog">
@@ -313,10 +312,11 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.marquee.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script src="/JS/login.js"></script>
 	<script src="js/main.js"></script>
 	<script src="/JS/requests.js"></script>
 	<script src="/JS/Paginas/Home.js"></script>
-	<script src="/JS/login.js"></script>
+	<script src="/JS/Crud.js"></script>
 	
 	
    

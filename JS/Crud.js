@@ -42,8 +42,8 @@ const saveUsuario = () => {
 
         const usuario = {
             nome: document.getElementById("nome").value,
-            email: document.getElementById("senha").value,
-            senha: document.getElementById("email").value,
+            email: document.getElementById("email").value,
+            senha: document.getElementById("senha").value,
             
         }
         console.log(usuario)
