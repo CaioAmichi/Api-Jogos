@@ -39,6 +39,7 @@ const JogosPorPlataforma = async() =>
     }
 
     console.log(myJson)
+    document.querySelector('.row').innerHTML = ''
     for(let i = 0; i < myJson.results.length ; i++) {
         
         topNome = myJson.results[i].name
@@ -51,7 +52,8 @@ const JogosPorPlataforma = async() =>
 
         const newRow = document.createElement('div');
         newRow.classList.add('col-md-6')
-
+        
+        
         newRow.innerHTML = `
 			<div class="review-item">
 				<div class="review-cover set-bg" data-setbg="${topImg}">

@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="css/animate.css" />
 	<link rel="stylesheet" href="/Zrud/css/button.css">
 	<link rel="stylesheet" href="/Zrud/css/records.css">
+	
 	<!-- <link rel="stylesheet" href="/Zrud/css/modal.css"> -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -96,12 +97,12 @@
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<header class="modal-header">
-								<h4 class="modal-title" id="modalCreate">Criar conta</h4>
+								<h4 class="modal-title" id="modalCreateUser">Criar conta</h4>
 								<button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close"
-									onclick=" clearFields('formularioCreate')">X</button>
+									onclick=" clearFields('formularioCreateUser')">X</button>
 							</header>
 							<div class="modal-body">
-								<form id="formularioCreate" data-index="new">
+								<form id="formularioCreateUser" data-index="new">
 									<label for="NomeUsuario">Nome de Usuario:</label> <br>
 									<input type="text" id="nome" name="NomeUsuario"> <br>
 									<label for="Email" style="margin-top: 20px;">Email:</label> <br>
@@ -122,7 +123,7 @@
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<header class="modal-header">
-								<h4 class="modal-title" id="modalCreate">Criar conta</h4>
+								<h4 class="modal-title" id="modalEdit">Criar conta</h4>
 								<button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close"
 									onclick=" clearFields('formularioCreate')">X</button>
 							</header>
@@ -155,6 +156,28 @@
 	</div>
 	</footer>
 	<!-- Footer section end -->
+	<div class="modal fade" id="modalLogin">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<header class="modal-header">
+					<h4 class="modal-title" id="modalCreate">Criar conta</h4>
+					<button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close"
+						onclick=" clearFields('formularioCreate')">X</button>
+				</header>
+				<div class="modal-body">
+					<form id="formularioCreate" data-index="new">
+						<label for="NomeUsuario">Nome de Usuario:</label> <br>
+						<input type="text" id="usuarioL" name="NomeUsuario"> <br>
+						<label for="Senha" style="margin-top: 20px;">Senha:</label><br>
+						<input type="password" name="Senha" id="senhaL">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-warning" data-dismiss="modal" onclick="Login()">Login</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!--====== Javascripts & Jquery ======-->
@@ -162,8 +185,9 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.marquee.min.js"></script>
-	<script src="/JS/login.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="/JS/Crud.js"></script>
+	<script src="/JS/login.js"></script>	
 	<script type="text/javascript" charset="utf8"
 		src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 	<script src="js/main.js"></script>

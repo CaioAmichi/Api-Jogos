@@ -263,6 +263,29 @@
 	</footer>
 	<!-- Footer section end -->
 
+	<div class="modal fade" id="modalLogin">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<header class="modal-header">
+					<h4 class="modal-title" id="modalCreate">Criar conta</h4>
+					<button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close"
+						onclick=" clearFields('formularioCreate')">X</button>
+				</header>
+				<div class="modal-body">
+					<form id="formularioCreate" data-index="new">
+						<label for="NomeUsuario">Nome de Usuario:</label> <br>
+						<input type="text" id="usuarioL" name="NomeUsuario"> <br>
+						<label for="Senha" style="margin-top: 20px;">Senha:</label><br>
+						<input type="password" name="Senha" id="senhaL">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-warning" data-dismiss="modal" onclick="Login()">Login</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<!--====== Javascripts & Jquery ======-->
 	<script src="js/jquery-3.2.1.min.js"></script>
@@ -276,6 +299,8 @@
 	<script>
 		$('select').select2();
 	</script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="/JS/Crud.js"></script>
 	<script src="/JS/login.js"></script>
 	
 </body>

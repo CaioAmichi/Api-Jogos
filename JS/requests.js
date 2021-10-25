@@ -116,7 +116,7 @@ const RequestPublishers = async(page = 1) => {
 
     const RequestJogosPorPlataforma = async(idPlat = "" , page = "1") =>{
     
-        const response = await fetch(`https://api.rawg.io/api/games?key=e8cbd9b8dcd34821a4d0d3acaab7a77d&page=${page}&parent_platforms=${idPlat}`)
+        const response = await fetch(`https://api.rawg.io/api/games?key=e8cbd9b8dcd34821a4d0d3acaab7a77d&page=${page}&platforms=${idPlat}`)
         
         
          const myJson = await response.json();

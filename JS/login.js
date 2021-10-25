@@ -80,11 +80,16 @@ const Login = () => {
     const senha = document.getElementById("senhaL").value
 
     const usuario = usuarioExiste(login);
-    console.log(usuario)
+   
     
     if (usuario == false || usuario.senha != senha){
-       console.log(usuario)
-        return alert("error")
+       
+        return Swal.fire({
+            title: 'Erro!',
+            text: 'Usuário ou Senha Inválida',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
     }
 
     

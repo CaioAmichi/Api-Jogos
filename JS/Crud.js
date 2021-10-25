@@ -46,8 +46,24 @@ const saveUsuario = () => {
             senha: document.getElementById("senha").value,
             
         }
-        console.log(usuario)
 
+        if(usuario.nome == "" || usuario.email == ""  || usuario.senha == "" ){
+            return Swal.fire({
+                title: 'Erro!',
+                text: 'Os dados inseridos sao invalidos',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+        }
+        const testeUsuario = usuarioExiste(usuario.nome)
+        if(testeUsuario != false){
+            return Swal.fire({
+                title: 'Erro!',
+                text: 'Usuário já existente',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+        }
         const index = document.getElementById("nome").dataset.index
         console.log(index)
     
@@ -70,8 +86,8 @@ const createRow = (usuario , index) => {
         <td>
              
             <span class="material-icons" data-toggle="modal" data-target="#modalEdit" >edit</span>
-        
-            <span class="material-icons" data-action = "delete-${index}">delete</span>
+            <button type="button" class="button red" data-action = "delete-${index}"><span class="material-icons">delete</span></button>
+            
         </td>    
     `
     document.querySelector("#tableUsuario>tbody").appendChild(newRow);
@@ -136,15 +152,43 @@ const editDelete = (event) => {
                 editUsuario(index);
             } else {
                 const usuario = readUsuario()[index];
-                const response = confirm(`Deseja realmente excluir o Usuarioe: ${usuario.nome}`)
-                if (response){
+                console.log("entrou na function")
+                /* const responses = confirm(`Deseja realmente excluir o Usuarioe: ${usuario.nome}`) */
+                Swal.fire({
+                    title: 'Você tem certaza que quer deletar ' + usuario.nome,
+                    text: "Isso não pode ser revertido",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    cancelButtonText: 'Cancelar',
+                    confirmButtonText: 'Confirmar'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        console.log("entrou no confirm")
+                        deleteUsuario(index);
+                        console.log("deletou")
+                        updateTable();
+                        console.log("deu update")
+                        const TesteUsuario = usuarioExiste(usuario.nome)
+                        Swal.fire(
+                            usuario.nome + ' foi deletado com sucesso',
+                            
+                          )
+                        if(TesteUsuario == false){
+                            logOff()
+                        }
+                      
+                    }
+                  })
+               /*  if (response){
                 deleteUsuario(index);
-                updateTable();
+                updateTable(); */
                 }
             }
         }
             
-    }
+    
 
     
     
