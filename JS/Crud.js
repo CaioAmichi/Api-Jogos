@@ -170,20 +170,22 @@ const editDelete = (event) => {
                         console.log("deletou")
                         updateTable();
                         console.log("deu update")
-                        const TesteUsuario = usuarioExiste(usuario.nome)
-                        Swal.fire(
-                            usuario.nome + ' foi deletado com sucesso',
-                            
-                          )
-                        if(TesteUsuario == false){
-                            logOff()
+                        const testeLogin = EstaLogado(usuario.nome)
+                        console.log(testeLogin)
+                        if(testeLogin == false){
+                            logOffCrud()
+                            Swal.fire(
+                                usuario.nome + ' foi deletado com sucesso',
+                              )
+                        }
+                        
+                          if(testeLogin == true){
+                            logOffCrud()
+                            window.location.assign('index.html');
                         }
                       
                     }
                   })
-               /*  if (response){
-                deleteUsuario(index);
-                updateTable(); */
                 }
             }
         }

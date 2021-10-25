@@ -45,6 +45,18 @@ function usuarioExiste(usuario) {
         return false
 }
 
+
+function EstaLogado(usuario) {
+    
+    const Login = readLoginUsuario()
+    
+    if (usuario == Login[0].nome) {
+        
+        return true
+    }
+    
+        return false
+}
         
     
 
@@ -155,8 +167,14 @@ const logOff = () =>
 {
    deleteLogin()
    LoginExiste()
-   document.location.reload(true)
+
+   window.location.assign('index.html');
    
+}
+
+const logOffCrud = () =>{
+    deleteLogin()
+    LoginExiste()
 }
 
 LoginExiste()
