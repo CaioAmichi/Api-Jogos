@@ -33,11 +33,22 @@ const JogosPorPlataforma = async() =>
     let topNome = ''
     let topMeta = ''
     let topImg = ''
-    
+
     if (myJson == "erro"){
         return console.log("veio vazio")
     }
+    
+    if(myJson.results.length ==  0 ){
 
+        return Swal.fire({
+            title: 'Erro!',
+            text: 'Não existem dados dessa plataforma',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
+    }
+
+    
     console.log(myJson)
     document.querySelector('.row').innerHTML = ''
     for(let i = 0; i < myJson.results.length ; i++) {
@@ -45,6 +56,11 @@ const JogosPorPlataforma = async() =>
         topNome = myJson.results[i].name
         topMeta = myJson.results[i].metacritic
         topImg = myJson.results[i].background_image
+
+
+        if(topMeta == null){
+            topMeta = "N/A"
+        }
         
         if(topImg == null) {
             topImg = "img/114717.png"
