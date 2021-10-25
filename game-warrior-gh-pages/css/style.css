@@ -1509,3 +1509,7 @@ ol {
 		font-size: 40px;
 	}
 }
+
+.clickable:hover{
+	cursor: pointer;
+}

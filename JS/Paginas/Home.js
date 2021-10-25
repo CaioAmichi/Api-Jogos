@@ -152,55 +152,7 @@ async function CriaSegundoGrafico() {
     })
 }
 
-const LoginExiste = () =>{
 
-    const logado = readLoginUsuario()
-    console.log(logado.length)
-    const botao = document.getElementById('login');
-    const Crud = document.getElementById('paginas');
-
-    if(logado.length == 1){
-
-        botao.innerHTML = `
-        
-		<a class="clickable"> ${logado[0].nome}/ <a class="clickable" onclick = logOff()> Sair </a>
-    
-    `
-
-        Crud.innerHTML = `
-
-        <ul>
-			<li><a href="desenvolvedoras.html">Desenvolvedoras</a></li>
-			<li><a href="review.html">Top Jogos</a></li>
-			<li><a href="plataforms.html">Plataformas</a></li>
-			<li><a href="CrudLogin.html">Crud Usuarios</a></li>
-		</ul>
-        
-        `
-    }else{
-        
-
-        botao.innerHTML = `
-        
-		<a data-toggle="modal"data-target="#modalLogin" class="clickable">Entre</a>
-    
-        `
-
-        Crud.innerHTML = `
-
-        <ul>
-			<li><a href="desenvolvedoras.html">Desenvolvedoras</a></li>
-			<li><a href="review.html">Top Jogos</a></li>
-			<li><a href="plataforms.html">Plataformas</a></li>
-			
-		</ul>
-        
-        `
-        
-    }
-    
-    
-}
 
 
 
@@ -211,4 +163,4 @@ HomeJogos()
 JogosFavHome()
 CriaGrafico()
 CriaSegundoGrafico()
-LoginExiste()
+

@@ -68,8 +68,10 @@ const createRow = (usuario , index) => {
         <td>${usuario.email}</td>
         
         <td>
-            <button type="button" class="button green" data-toggle="modal" data-target="#modalEdit" >editar</button>
-            <button type="button" class="button red" data-action = "delete-${index}">excluir</button>
+             
+            <span class="material-icons" data-toggle="modal" data-target="#modalEdit" >edit</span>
+        
+            <span class="material-icons" data-action = "delete-${index}">delete</span>
         </td>    
     `
     document.querySelector("#tableUsuario>tbody").appendChild(newRow);
@@ -157,3 +159,5 @@ document.querySelector("#tableUsuario> tbody")
     .addEventListener("click", editDelete);
 
     updateTable();
+    
+    
